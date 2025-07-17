@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; }
+        .container { width: 50%; margin: 0 auto; }
+        h1 { text-align: center; color: #333; }
+        .task-list { list-style-type: none; padding: 0; }
+        .task { display: flex; justify-content: space-between; padding: 10px; background-color: #fff; margin: 5px 0; border-radius: 5px; }
+        .task.done { text-decoration: line-through; color: gray; }
+        button { padding: 5px 10px; cursor: pointer; background-color: #007BFF; color: white; border: none; border-radius: 5px; }
+        button:hover { background-color: #0056b3; }
+        .add-task { display: flex; margin-bottom: 20px; }
+        .add-task input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        .add-task button { padding: 10px 15px; background-color: #28a745; border: none; color: white; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>My To-Do List</h1>
+
+        <form action="/add" method="POST" class="add-task">
+            <input type="text" name="task" placeholder="Add a new task" required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <ul class="task-list">
+            {% for task in tasks %}
+                <li class="task {% if task['done'] %}done{% endif %}">
+                    {{ task['name'] }}
+                    <div>
+                        {% if not task['done'] %}
+                            <a href="{{ url_for('mark_done', task_id=task['id']) }}">
+                                <button>Mark as Done</button>
+                            </a>
+                        {% endif %}
+                        <a href="{{ url_for('delete_task', task_id=task['id']) }}">
+                            <button>Delete</button>
+                        </a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
