@@ -1,10 +1,10 @@
 # Task Management Application using Flask
 
-A task management web application built with **Flask** , **Python** and **SQLite**, supporting task addition, completion, and deletion. Includes automated testing using **pytest**.
+A task management app is user-friendly web application for managing your daily tasks, built using **Flask** (a Python micro web framework) and **SQLite** for data storage supporting task addition, completion, and deletion. The app features a clean, responsive UI and includes a full test suite using **pytest** to ensure reliability and maintainability.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Add new tasks
 - Mark tasks as done
@@ -14,17 +14,16 @@ A task management web application built with **Flask** , **Python** and **SQLite
 
 ---
 
-## 📦 Technologies Used
+##  Technologies Used
 
-- Python 3.x
-- Flask
-- SQLite
-- HTML5 & CSS3
-- Pytest (for testing)
+Programming Languages - Python, HTML5 , CSS3
+Web Frameworks - Flask
+Database - SQLite
+Testing Frameworks- Pytest
 
 ---
 
-## 🛠️ Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the Repository
 
